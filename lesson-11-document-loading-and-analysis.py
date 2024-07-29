@@ -3,12 +3,14 @@ import os
 
 os.environ["OPENAI_API_KEY"] = "..."
 
-from langchain import OpenAI
-from langchain.document_loaders import TextLoader
+from langchain_openai import OpenAI
+from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.vectorstores import Chroma
+from langchain_openai import OpenAIEmbeddings
+from langchain_chroma import Chroma
 from langchain.chains import RetrievalQA
+
+
 
 loader = TextLoader("./state-of-the-union-23.txt")
 documents = loader.load()
